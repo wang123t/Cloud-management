@@ -9,7 +9,7 @@
           <navmenu></navmenu>
         </el-aside>
         <el-main>
-          <tabs></tabs>
+          <!-- <tabs></tabs> -->
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -20,14 +20,14 @@
 <script>
 import NavMenu from '@/components/NavMenu'
 import Header from '@/components/Header'
-import tabs from '@/components/tabs'
+/* import tabs from '@/components/tabs' */
 
 export default {
   name: 'home',
    components: {
     'navmenu': NavMenu,
     'vheader':Header,
-    'tabs':tabs
+    /* 'tabs':tabs */
 
   }
   
