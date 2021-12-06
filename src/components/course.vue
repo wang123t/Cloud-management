@@ -126,8 +126,6 @@ export default {
   }
 }
 </script>
- 
-
 
 <style>
 #course {

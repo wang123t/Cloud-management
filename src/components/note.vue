@@ -2,7 +2,7 @@
   <div id="note">
     <el-card>
       <div id="mains" style="width:600px ;height:400px;">
-      </div>
+      </div><!--引入echarts，必须有一个容器，设置宽高 -->
       <div class="plantime">
         <el-progress type="circle" :percentage="30"></el-progress>
         <p>本周学习完成进度</p>
@@ -22,7 +22,7 @@
   </div>
 </template>
 <script>
-import * as echarts from 'echarts'
+import * as echarts from 'echarts'//再次引入echarts
 export default {
   name:'note',
   data(){
@@ -63,7 +63,7 @@ export default {
         });
      }
   },
-  mounted(){
+  mounted(){//挂载该图表到组件上
         this.initecharts();
     },
 }

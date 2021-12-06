@@ -2,14 +2,14 @@
 <div id="home">
   <el-container>
       <el-header>
-        <vheader></vheader>
+        <Header/>
       </el-header>
       <el-container>
         <el-aside width="200px">
-          <navmenu></navmenu>
+          <NavMenu/>
         </el-aside>
         <el-main>
-          <!-- <tabs></tabs> -->
+          <!-- <Tabs/> -->
           <router-view></router-view>
         </el-main>
       </el-container>
@@ -20,15 +20,14 @@
 <script>
 import NavMenu from '@/components/NavMenu'
 import Header from '@/components/Header'
-/* import tabs from '@/components/tabs' */
+// import Tabs from '@/components/Tabs'
 
 export default {
   name: 'home',
-   components: {
-    'navmenu': NavMenu,
-    'vheader':Header,
-    /* 'tabs':tabs */
-
+  components: {
+    NavMenu,
+    Header,
+    // Tabs
   }
   
 }

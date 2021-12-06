@@ -65,7 +65,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
 #doing {
   height: 100%;
   overflow: hidden;

@@ -1,24 +1,24 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Main from '@/components/Main'
+import Login from '../components/Login'
 Vue.use(VueRouter);
 
 const routes = [
   {/* 首页登录页组件 */
-    path: "/Main",
-    name: "Main",
-    component: Main,   
+    path: "/Login",
+    name: "Login",
+    component: Login,   
   },
   {
     path: "/",
     name: "Home",
     component: Home,
     /* home的子组件 */
-    redirect:'/Main',
+    redirect:'/Login',
     children:[
       {
-        path: "/course",
+        path: "course",
         name: "course",
         component: () =>
           import( "../components/course.vue"),
@@ -60,10 +60,10 @@ const routes = [
           import( "../components/practice.vue"),
       },
       {
-        path: "/tabs",
-        name: "tabs",
+        path: "/Tabs",
+        name: "Tabs",
         component: () =>
-          import( "../components/tabs.vue"),
+          import( "../components/Tabs.vue"),
       },
     ]
   },
@@ -74,4 +74,18 @@ const router = new VueRouter({
   routes,
 });
 
-export default router;
+router.beforeEach((to,from,next) => {
+  if(to.path == '/Login'){
+    next()
+  }else{
+    const token = window.sessionStorage.getItem('token')
+    if(!token){
+      next('/Login')
+    }
+    else{
+      next()
+    }
+  }
+})
+
+export default router
